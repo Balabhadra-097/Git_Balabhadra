@@ -1,0 +1,94 @@
+# 10) Write an algorithm for insertion, deletion, and display of elements in a stack (using LIST), where user can select and run any function of his/her choice.
+class stack:
+    def __init__(self):
+        self.stack=list()
+    def push(self,data):
+        if self.stack == None:
+            self.stack.insert(0,data)
+        else:
+            self.stack.append(data)
+    def pop(self):
+        if self.stack==None:
+            print("empty list")
+        else:
+            self.stack.pop()
+    def display(self):
+        if len(self.stack)==0:
+            print("empty stack")
+        else:
+            print(self.stack)
+
+def stackk():
+    while True:
+        s=stack()
+        choice=int(input("enter your choice \n 1 . push \n 2. pop \n 3. display \n 4. exit"))
+        match choice:
+            case 1:
+                s.push(data)
+            case 2:
+                s.pop()
+            case 3:
+                s.display()
+            case 4:
+                print("thank you")
+                break;
+
+stackk()
+
+
+
+------------------------------
+
+# 11) Write a program for insertion, deletion and display of elements in a stack using Linked List (user can select and perform any operation)
+class node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+class stack:
+    def __init__(self):
+        self.top = None
+
+    def push(self,data):
+        newnode = node(data)
+        if self.top == None:
+            self.top = newnode
+        else:
+            newnode.next = self.top
+            self.top = newnode
+
+    def display(self):
+        if self.top == None:
+            print("empty stack")
+        else:
+            curr = self.top
+            while curr != None:
+                print(curr.data)
+                curr = curr.next
+
+            print()
+
+    def pop(self):
+        if self.top == None:
+            print("empty stack")
+        else:
+            self.top = self.top.next
+    
+def stackk():
+    s = stack()
+    while True:
+        print ("1 = Push\n2 = pop\n3 = display\n4 = exit\n ")
+        choice = int(input("Enter the Number: "))
+        match choice:
+            case 1 :
+                data = int(input("Enter the data: "))
+                s.push(data)
+            case 2 :
+                s.pop()
+            case 3 :
+                s.display()
+            case 4 :
+                break
+            case _:
+                print(" Enter the correct number")
+stackk()
