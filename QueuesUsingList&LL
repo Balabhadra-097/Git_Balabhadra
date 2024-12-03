@@ -1,0 +1,72 @@
+# 8) Write an algorithm for implementation of queue using list.
+class Queue:
+    def init__(self):
+        self. queue = list()
+    def enqueue(self, value):
+        self.queue.append (value)
+    def dequeue (self):
+        if len(self.queue) == 0:
+            raise Exception ("Underflow: Queue is empty")
+        else:
+            data = self. queue[0]
+            self.queue.pop(0)
+            return data
+    def display(self):
+        print("Queue: ", self. queue)
+queue = Queue()
+while True:
+    choice = int(input("Enter your choice\n1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\nChoice: "))
+    match choice:
+        case 1:
+            data = int(input("Data = "))
+            queue. enqueue (data)
+        case 2:
+            print("removed item: ",queue.dequeue())
+        case 3:
+            queue. display()
+        case 4:
+            print ("Thank you")
+            break
+        case _:
+            print("Invalid Input!!! \nEnter valid input")
+
+
+
+--------
+#  9) Write an algorithm for implementation of queue using linked list.
+class node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.rear = None
+
+    # Traverse the Queue
+    def traverse(self):
+        if self.front == None:
+            return 'empty queue'
+        else:
+            curr = self.front
+            while curr != None:
+                print(curr.data ,end=' ')
+                curr = curr.next
+    # enqueue 
+    def Enqueue(self,data):
+        newnode = node(data)
+        if self.front == None:
+            self.front = newnode
+            self.rear = self.front
+        else:
+            self.rear.next = newnode
+            self.rear = newnode
+    #dequeue
+    def Dequeue(self):
+        if self.front == None:
+            return 'empty list'
+        if self.front == self.rear:
+            self.fron = self.rear = None
+        else:
+            self.front = self.front.next
