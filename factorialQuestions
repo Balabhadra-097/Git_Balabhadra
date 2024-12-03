@@ -1,0 +1,41 @@
+# 12) Write a program using recursion in python to find factorial. 
+# Factorial using head recursion
+def factorial(x):
+    return 1 if x == 0 else x * factorial(x-1)
+
+print(factorial(5))
+
+#Factorial of a number using tail recursion
+def factorial(x):
+    return _factorial(x)
+def _factorial(x , n = 1):
+    if x == 0 or x == 1:
+        return n
+    else:
+        return _factorial(x - 1, n * x)
+
+print(factorial(7))
+
+
+--------------------------------------
+
+
+# 13) Write a program using recursion in python to find Fibonacci of any user defined number.
+def fibonacci(x):
+    return 0 if x == 0 else 1 if x == 1 else fibonacci(x-1) + fibonacci(x-2)
+
+print(fibonacci(8))
+
+#fibonacci of a number using tail recursion
+def fibonacci(x):
+    return _fibonacci(x)
+
+def _fibonacci(x, a = 0, b = 1):
+    if x == 0:
+        return a
+    elif x == 1:
+        return b
+    else:
+        return _fibonacci(x - 1, b, a + b)
+
+print(fibonacci(5))
