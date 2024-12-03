@@ -1,0 +1,125 @@
+#1) Write a program in python to create an array and perform the following operations:
+    # (i) Add a new element to an array 
+    # (ii) Add four elements to an array 
+    # (iii) Add an element at the fourth position  
+    # (iv) Delete seventh element from the left of an array 
+    # (v) Remove last element and return it 
+    # (vi) Create two arrays having three elements each and merge all three arrays. 
+    # (vii) Display the array formed in question (vi) 
+    # (viii) Determine the length of the new array formed 
+    # (ix) Print the ninth element of the new array 
+
+#Creating an array 
+import numpy as np 
+arr1 = np.array([1,5,9])
+
+#adding a new element in array 
+arr1 = np.append(arr1,12)
+
+
+#adding four elements in the array 
+arr2 = np.array([12,13,14,15])
+arr1 = np.append(arr1,arr2)
+
+ #adding an element at the fourth position 
+arr1= np.insert(arr1,3,7)
+
+#deleting the seventh element from left
+arr1 = np.delete(arr1,6)
+
+#remove last element and return it 
+temp = arr1[len(arr1) - 1]
+arr1 = np.delete(arr1,-1)
+print( " the deleted element  : ", temp)
+
+
+#(vi)	Creating two arrays having three elements each and merge all three arrays
+array1 = np.array([9,8,7])
+array2 = np.array([4,3,2])
+arr1 = np.concatenate([arr1,array1,array2])
+
+print(arr1)
+
+#lenght of the new array 
+print(len(arr1))
+
+#printing the ninth element of the array 
+print(arr1[8])
+
+
+--------------------------------------------
+
+
+# 2) Write a program to create an array where user defines the length and input all its elements. 
+import array as ar
+array1 = ar.array('i',[])
+array_size = int(input("enter the size of array : "))
+for i in range(array_size):
+    num = int(input("enter the array element"))
+    array1.append(num)
+print(array14)
+
+
+------------------------------------------------------
+
+
+
+# 3) Create a 2X2 array and perform the following operations:
+    # (i) Display the data type of array 
+    # (ii) Rank of the matrix
+    # (iii) Order of the matrix
+    # (iv) Convert the 2D array into 1D array
+    # (v) Create another 2X2 matrix and perform addition, substraction, division
+
+import numpy as np
+array1=np.array([[1,2],[5,6]])
+
+
+#1 :- for datatype of the array
+print("data type of array: ",array1.dtype)
+
+
+#2 :- for rank of the matrix
+print("The Rank of a Matrix: ",np.argsort(array1))
+
+#3 :- for order of the matrix
+print("the order of array: ",np.shape(array1))
+
+#4 for converting the 2d matrix in 1d matrix
+result=array1.ravel()
+print("2d array in 1d array: ", result)
+
+#5 create a matrix and perform addition, substraction,division
+array2=np.array([[1,4],[2,8]])
+print("substraction: ",array1-array2)
+print("addition: ",array1+array2)
+print("division: ",array1/array2)
+
+
+
+
+
+-----------------------------------------------------------
+
+
+# 4) Perform the following operation on 3X3 array:-
+#     (i) Transpose the matrix
+#     (ii) Create another 3X3 array and perform multiplication
+
+
+#1 creating a 3x3 matrix and transposing it
+array3=np.array([[9,8,7],[6,5,4],[3,2,1]])
+trans=np.transpose(array3)
+print(" the tranpose of matrix is : \n" ,trans)
+
+#2 performing multiplication on
+array4=np.array([[1,4,2],[3,5,3],[2,3,9]])
+print("multiplication = \n", array3*array4)
+
+
+
+
+
+
+
+
